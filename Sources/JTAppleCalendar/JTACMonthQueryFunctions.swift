@@ -105,7 +105,7 @@ extension JTACMonthView {
 
         let dOffset = theOffset / divValue
 
-        guard dOffset >= Double(Int.min) && dOffset <= Double(Int.max) else { return true }
+        guard dOffset >= Double(Int.min) && dOffset <= Double(Int.max), !dOffset.isNaN else { return true }
 
         let sectionForOffset = Int(dOffset)
         let calendarCurrentOffset = scrollDirection == .horizontal ? contentOffset.x : contentOffset.y
